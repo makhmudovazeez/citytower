@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <header>
     <!-- Header Start -->
    <div class="header-area header-transparent">
@@ -9,17 +10,26 @@
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>
-                                    <li>+(123) 1234-567-8901</li>
-                                    <li>info@domain.com</li>
+                                    <li>{{ request.session.contact.phone }}</li>
+                                    <li>{{ request.session.contact.email }}</li>
                                     <li>Mon - Sat 8:00 - 17:30, Sunday - CLOSED</li>
                                 </ul>
                             </div>
                             <div class="header-info-right">
                                 <ul class="header-social">
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                   <li> <a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                    {% if request.session.contact.telegram %}
+                                        <li><a href="{{request.session.contact.telegram}}"><i class="fab fa-telegram"></i></a></li>
+                                    {% endif %}
+                                    {% if request.session.contact.instagram %}
+                                        <li><a href="{{request.session.contact.instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                    {% endif %}
+                                    {% if request.session.contact.facebook %}
+                                        <li><a href="{{request.session.contact.facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                                    {% endif %}
+                                    {% if request.session.contact.twitter %}
+                                        <li><a href="{{request.session.contact.twitter}}"><i class="fab fa-twitter"></i></a></li>
+                                    {% endif %}
+
                                 </ul>
                             </div>
                         </div>
@@ -41,8 +51,8 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="{% url 'index' %}" style="font-size: 18px;">Home</a></li>
-                                        <li><a href="{% url 'about' %}" style="font-size: 18px;">About</a></li>
+                                        <li><a href="{% url 'index' %}" style="font-size: 18px;">{% trans "Home" %}</a></li>
+                                        <li><a href="{% url 'about' %}" style="font-size: 18px;">{% trans "About" %}</a></li>
                                         <li><a href="{% url 'projects' %}" style="font-size: 18px;">Projects</a></li>
                                         <li><a href="{% url 'contact' %}" style="font-size: 18px;">Contact</a></li>
                                     </ul>
