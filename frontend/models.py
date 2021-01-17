@@ -61,5 +61,6 @@ class Services(models.Model):
     title_ru = models.CharField(max_length=200)
     about_uz = models.TextField()
     about_ru = models.TextField()
+    image = models.ImageField()
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)

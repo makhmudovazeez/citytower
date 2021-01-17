@@ -1,18 +1,24 @@
 from django.shortcuts import render
 from .models import Contacts
-from django.utils.translation import gettext as _
 from django.http import HttpResponse
 
 
 def session(request):
-    contact = Contacts.objects.get()
-    request.session.contact = contact
+    my_contact = Contacts
+    try:
+        my_contact = Contacts.objects.get()
+    except my_contact.DoesNotExist:
+        my_contact.phone = "+998909696293"
+        my_contact.phone2 = "+998909696293"
+        my_contact.email = "constructiontowersm@gmail.com"
+        my_contact.address_ru = "Боткина"
+        my_contact.address_uz = "Botkina"
+    request.session.my_contact = my_contact
 
 
 def index(request):
-    output = _("Welcome to my site.")
-    return HttpResponse(output)
     session(request)
+    # return HttpResponse(request.session.my_contact.email)
     return render(request, 'frontend/index.html')
 
 

@@ -10,8 +10,8 @@
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>
-                                    <li>{{ request.session.contact.phone }}</li>
-                                    <li>{{ request.session.contact.email }}</li>
+                                    <li>{{ request.session.my_contact.phone }}</li>
+                                    <li>{{ request.session.my_contact.email }}</li>
                                     <li>Mon - Sat 8:00 - 17:30, Sunday - CLOSED</li>
                                 </ul>
                             </div>
@@ -53,15 +53,15 @@
                                     <ul id="navigation">
                                         <li><a href="{% url 'index' %}" style="font-size: 18px;">{% trans "Home" %}</a></li>
                                         <li><a href="{% url 'about' %}" style="font-size: 18px;">{% trans "About" %}</a></li>
-                                        <li><a href="{% url 'projects' %}" style="font-size: 18px;">Projects</a></li>
-                                        <li><a href="{% url 'contact' %}" style="font-size: 18px;">Contact</a></li>
+                                        <li><a href="{% url 'projects' %}" style="font-size: 18px;">{% trans "Projects" %}</a></li>
+                                        <li><a href="{% url 'contact' %}" style="font-size: 18px;">{% trans "Contact" %}</a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-3">
                             <div class="header-right-btn f-right d-none d-lg-block">
-                                <a href="#" class="btn">Contact Now</a>
+                                <a href="#" class="btn">{% trans "Contact Now" %}</a>
                             </div>
                         </div>
                         <!-- Mobile Menu -->
