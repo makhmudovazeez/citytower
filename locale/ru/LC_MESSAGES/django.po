@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-17 23:44+0500\n"
+"POT-Creation-Date: 2021-01-18 09:15+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,22 +28,27 @@ msgstr ""
 msgid "Uzbek"
 msgstr ""
 
+#: .\frontend\templates\frontend\index.html:22
+msgid "Our Services"
+msgstr ""
+
 #: .\frontend\templates\frontend\layouts\header.html:54
 msgid "Home"
-msgstr ""
+msgstr "Домой"
 
 #: .\frontend\templates\frontend\layouts\header.html:55
 msgid "About"
-msgstr ""
+msgstr "О нас"
 
 #: .\frontend\templates\frontend\layouts\header.html:56
 msgid "Projects"
-msgstr ""
+msgstr "Проекты"
 
 #: .\frontend\templates\frontend\layouts\header.html:57
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 #: .\frontend\templates\frontend\layouts\header.html:64
 msgid "Contact Now"
-msgstr ""
+msgstr "Позвоните нам"
+
