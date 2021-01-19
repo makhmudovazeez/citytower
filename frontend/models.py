@@ -12,15 +12,21 @@ class Works(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
 
+    def __str__(self):
+        return self.name
+
 
 class WoksImages(models.Model):
-    image = models.ImageField(upload_to='upload')
+    image = models.ImageField(upload_to='works')
     work_id = models.ForeignKey(
         Works,
         on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
+
+    def __str__(self):
+        return self.name
 
 
 class Feedback(models.Model):
@@ -32,12 +38,18 @@ class Feedback(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
 
+    def __str__(self):
+        return self.name
+
 
 class About(models.Model):
     about_uz = models.TextField()
     about_ru = models.TextField()
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
+
+    def __str__(self):
+        return self.name
 
 
 class Contacts(models.Model):
@@ -55,12 +67,18 @@ class Contacts(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
 
+    def __str__(self):
+        return self.name
+
 
 class Services(models.Model):
     title_uz = models.CharField(max_length=200)
     title_ru = models.CharField(max_length=200)
     about_uz = models.TextField()
     about_ru = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='services')
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
+
+    def __str__(self):
+        return self.name

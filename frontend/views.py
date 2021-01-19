@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Contacts
+from .models import Services
 from django.http import HttpResponse
 
 
@@ -18,8 +19,8 @@ def session(request):
 
 def index(request):
     session(request)
-    # return HttpResponse(request.session.my_contact.email)
-    return render(request, 'frontend/index.html')
+    services = Services.objects.all()
+    return render(request, 'frontend/index.html', {'services':services})
 
 
 def about(request):

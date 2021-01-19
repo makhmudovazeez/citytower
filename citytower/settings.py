@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -131,8 +132,10 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/img/'
-
 STATICFILES_DIRS = [
     BASE_DIR / "static"
+]
+
+MEDIA_ROOT = [
+    BASE_DIR / "uploads"
 ]
