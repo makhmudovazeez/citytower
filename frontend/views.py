@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Contacts
-from .models import Services
+from admin.models import Contacts
+from admin.models import Services
 from django.http import HttpResponse
 
 
