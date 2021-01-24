@@ -5,15 +5,7 @@ from django.http import HttpResponse
 
 
 def session(request):
-    my_contact = Contacts
-    try:
-        my_contact = Contacts.objects.get()
-    except my_contact.DoesNotExist:
-        my_contact.phone = "+998909696293"
-        my_contact.phone2 = "+998909696293"
-        my_contact.email = "constructiontowersm@gmail.com"
-        my_contact.address_ru = "Боткина"
-        my_contact.address_uz = "Botkina"
+    my_contact = Contacts.objects.get()
     request.session.my_contact = my_contact
 
 
