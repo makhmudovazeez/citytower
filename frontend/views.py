@@ -1,18 +1,20 @@
 from django.shortcuts import render
 from admin.models import Contacts
+from admin.models import Works
 from admin.models import Services
 from django.http import HttpResponse
 
 
 def session(request):
-    my_contact = Contacts.objects.get()
+    my_contact = Contacts.objects.get(pk=1)
     request.session.my_contact = my_contact
 
 
 def index(request):
     session(request)
     services = Services.objects.all()
-    return render(request, 'frontend/index.html', {'services':services})
+    works = Works.objects.all()
+    return render(request, 'frontend/index.html', {'services':services, 'works':works})
 
 
 def about(request):

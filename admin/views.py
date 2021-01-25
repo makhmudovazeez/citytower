@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from auth.models import Users
 
 
 # Create your views here.
@@ -20,7 +21,9 @@ def index(request):
 
 # User actions
 def user(request):
-    return render(request, 'admin/users/index.html')
+    users = Users.objects.all()
+    return HttpResponse(users)
+    return render(request, 'admin/users/index.html', {'users':users})
 
 
 def user_create(request):

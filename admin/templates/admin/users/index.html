@@ -28,17 +28,19 @@
                                 </th>
                                 </thead>
                                 <tbody>
+                                {% for user in users %}
                                 <tr>
                                     <td>
-                                        1
+                                        {{ user.id }}
                                     </td>
                                     <td>
-                                        Dakota Rice
+
                                     </td>
                                     <td>
                                         Niger
                                     </td>
                                 </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>
