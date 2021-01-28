@@ -24,6 +24,9 @@
                                     Номер Телефона
                                 </th>
                                 <th>
+                                    Админ
+                                </th>
+                                <th>
                                     Действия
                                 </th>
                                 </thead>
@@ -34,10 +37,13 @@
                                         {{ user.id }}
                                     </td>
                                     <td>
-
+                                        {{ user.username }}
                                     </td>
                                     <td>
-                                        Niger
+                                        {{ user.email }}
+                                    </td>
+                                    <td>
+                                        {{ user.is_superuser }}
                                     </td>
                                 </tr>
                                 {% endfor %}

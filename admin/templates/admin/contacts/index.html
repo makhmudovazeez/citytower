@@ -1,0 +1,63 @@
+{% extends 'admin/layouts/main.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Контакт</h4>
+                        <p class="card-category">Ваши Контакты</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    №
+                                </th>
+                                <th>
+                                    Номер
+                                </th>
+                                <th>
+                                    Номер2
+                                </th>
+                                <th>
+                                    Адрес
+                                </th>
+                                <th>
+                                    Адрес Уз
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        {{ contact.phone }}
+                                    </td>
+                                    <td>
+                                        {{ contact.phone2 }}
+                                    </td>
+                                    <td>
+                                        {{ contact.email }}
+                                    </td>
+                                    <td>
+                                        {{ contact.address_ru }}
+                                    </td>
+                                    <td>
+                                        {{ contact.address_uz }}
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

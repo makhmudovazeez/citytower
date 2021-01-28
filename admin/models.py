@@ -4,14 +4,6 @@ from django.db import models
 
 # Create your models here.
 
-class Users(models.Model):
-    email = models.EmailField()
-    username = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
-    created_at = models.DateTimeField(default=datetime.now, blank=False)
-    updated_at = models.DateTimeField(default=datetime.now, blank=False)
-
-
 class Works(models.Model):
     title_uz = models.CharField(max_length=225)
     title_ru = models.CharField(max_length=225)
@@ -72,11 +64,7 @@ class Contacts(models.Model):
     facebook = models.CharField(max_length=100, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
-
     objects = ContactsManager()
-
-
-contact = Contacts.objects.create_contact('constructiontowersm@gmail.com', '+998998609464', '+998977467878')
 
 
 class Services(models.Model):
