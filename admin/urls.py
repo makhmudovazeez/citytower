@@ -13,15 +13,32 @@ urlpatterns = [
     path('user/update/', views.user_update, name='admin.user.update'),
 
     # Works urls
+    path('works/', views.works, name='admin.works'),
     path('works/create', views.works_create, name='admin.works.create'),
     path('works/store', views.works_store, name='admin.works.store'),
     path('works/edit', views.works_edit, name='admin.works.edit'),
     path('works/update', views.works_update, name='admin.works.update'),
     path('works/delete', views.works_delete, name='admin.works.delete'),
 
+    # Services urls
+    path('services/', views.services, name='admin.services'),
+    path('services/create', views.services_create, name='admin.services.create'),
+    path('services/store', views.services_store, name='admin.services.store'),
+    path('services/edit', views.services_edit, name='admin.services.edit'),
+    path('services/update', views.services_update, name='admin.services.update'),
+    path('services/delete', views.services_delete, name='admin.services.delete'),
+
     # Contacts urls
     path('contact/', views.contact, name='admin.contact'),
     # path('contact/edit', views.contact_edit, name='admin.contact.edit'),
     # path('contact/update', views.contact_update, name='admin.contact.update'),
+
+    # About urls
+    path('about/', views.about, name='admin.about'),
+    path('about/create', views.about_create, name='admin.about.create'),
+    path('about/store', views.about_store, name='admin.about.store'),
+    path('about/edit', views.about_edit, name='admin.about.edit'),
+    path('about/update', views.about_update, name='admin.about.update'),
+
 
 ]

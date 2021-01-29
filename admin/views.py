@@ -67,6 +67,50 @@ def works_delete(request):
     pass
 
 
+def services(request):
+    return render(request, 'admin/services/index.html')
+
+
+def services_create(request):
+    return render(request, 'admin/services/create.html')
+
+
+def services_store(request):
+    pass
+
+
+def services_edit(request):
+    return render(request, 'admin/services/edit.html')
+
+
+def services_update(request):
+    pass
+
+
+def services_delete(request):
+    pass
+
+
+def about(request):
+    return render(request, 'admin/about/index.html')
+
+
+def about_create(request):
+    return render(request, 'admin/about/create.html')
+
+
+def about_store(request):
+    pass
+
+
+def about_edit(request):
+    return render(request, 'admin/about/edit.html')
+
+
+def about_update(request):
+    pass
+
+
 def contact(request):
     my_contact = Contacts.objects.get(pk=1)
     return render(request, 'admin/contacts/index.html', {'contact': my_contact})

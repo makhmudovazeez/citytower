@@ -9,26 +9,42 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          {% if request.resolver_match.view_name == 'admin.index' %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
             <a class="nav-link" href="{% url 'admin.index' %}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          {% if 'admin.user' in request.resolver_match.view_name %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
             <a class="nav-link" href="{% url 'admin.user' %}">
               <i class="material-icons">person</i>
               <p>Пользователи</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+          {% if 'admin.works' in request.resolver_match.view_name %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
+            <a class="nav-link" href="{% url 'admin.works' %}">
               <i class="material-icons">account_balance</i>
               <p>Работы</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+          {% if 'admin.abouts' in request.resolver_match.view_name %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
+            <a class="nav-link" href="{% url 'admin.about' %}">
               <i class="material-icons">bubble_chart</i>
               <p>Icons</p>
             </a>
