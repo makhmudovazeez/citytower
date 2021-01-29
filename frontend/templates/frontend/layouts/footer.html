@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <footer>
     <!-- Footer Start-->
     <div class="footer-main">
@@ -9,12 +10,9 @@
                         <div class="single-footer-caption mb-30">
                             <!-- logo -->
                             <div class="footer-logo">
-                                <a href="index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
-                            </div>
-                            <div class="footer-tittle">
-                                <div class="footer-pera">
-                                    <p class="info1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
-                                </div>
+                                <a href="{% url 'index' %}">
+                                    <img src="{% static 'frontend/img/footer-logo.png' %}" width="300px">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -23,10 +21,10 @@
                             <div class="footer-tittle">
                                 <h4>Quick Links</h4>
                                 <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Projects</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">{% trans 'About' %}</a></li>
+                                    <li><a href="#">{% trans 'Services' %}</a></li>
+                                    <li><a href="#">{% trans 'Projects' %}</a></li>
+                                    <li><a href="#">{% trans 'Contact' %}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -36,11 +34,19 @@
                             <div class="footer-tittle">
                                 <h4>Contact</h4>
                                 <div class="footer-pera">
-                                    <p class="info1">198 West 21th Street, Suite 721 New York,NY 10010</p>
+                                    <p class="info1">
+                                        {% if request.LANGUAGE_CODE == 'ru' %}
+                                            {{ request.session.my_contact.address_ru }}
+                                        {% else %}
+                                            {{ request.session.my_contact.address_uz }}
+                                        {% endif %}
+                                    </p>
                                 </div>
                                 <ul>
-                                    <li><a href="#">Phone: +95 (0) 123 456 789</a></li>
-                                    <li><a href="#">Cell: +95 (0) 123 456 789</a></li>
+                                    <li><a href="tel:{{ request.session.my_contact.phone }}">
+                                        {{ request.session.my_contact.phone }}</a></li>
+                                    <li><a href="tel:{{ request.session.my_contact.phone2 }}">
+                                        {{ request.session.my_contact.phone2 }}</a></li>
                                 </ul>
                             </div>
                         </div>

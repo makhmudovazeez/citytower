@@ -16,6 +16,7 @@ def session(request):
 
 def index(request):
     session(request)
+    # return HttpResponse(request.LANGUAGE_CODE)
     services = Services.objects.all()
     works = Works.objects.all()
     return render(request, 'frontend/index.html', {'services': services, 'works': works})

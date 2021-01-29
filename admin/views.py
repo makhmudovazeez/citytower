@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, auth
 from .models import Contacts
 
 
@@ -12,7 +13,18 @@ def login(request):
 
 
 def authorize(request):
-    return HttpResponse('auth')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('admin.index')
+        else:
+            return redirect('login')
+    return render(request, 'admin/login.html')
 
 
 # Crud actions

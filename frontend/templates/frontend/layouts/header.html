@@ -10,8 +10,12 @@
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>
-                                    <li>{{ request.session.my_contact.phone }}</li>
-                                    <li>{{ request.session.my_contact.email }}</li>
+                                    <li><a href="tel:{{ request.session.my_contact.phone }}" style="color:white;">
+                                        {{ request.session.my_contact.phone }}</a></li>
+                                    <li><a href="tel:{{ request.session.my_contact.phone2 }}" style="color:white;">
+                                        {{ request.session.my_contact.phone }}</a></li>
+                                    <li><a href="mailto:{{ request.session.my_contact.email }}" style="color:white;">
+                                        {{ request.session.my_contact.email }}</a></li>
                                     <li>9:00 - 18:00 {% trans 'Monday to Friday' %}</li>
                                 </ul>
                             </div>
@@ -61,7 +65,7 @@
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-3">
                             <div class="header-right-btn f-right d-none d-lg-block">
-                                <a href="#" class="btn">{% trans "Contact Now" %}</a>
+                                <a href="tel:{{ request.session.my_contact.phone }}" class="btn">{% trans "Contact Now" %}</a>
                             </div>
                         </div>
                         <!-- Mobile Menu -->
