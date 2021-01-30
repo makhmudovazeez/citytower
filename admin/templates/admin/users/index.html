@@ -5,6 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                <a href="{% url 'admin.user.create' %}" class="btn btn-success btn-round">Создать</a>
                 <div class="card">
                     <div class="card-header card-header-primary">
                         <h4 class="card-title">Пользователи</h4>
@@ -26,7 +27,7 @@
                                 <th>
                                     Админ
                                 </th>
-                                <th>
+                                <th width="15%">
                                     Действия
                                 </th>
                                 </thead>
@@ -44,6 +45,18 @@
                                     </td>
                                     <td>
                                         {{ user.is_superuser }}
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div>
+                                                <a class="btn btn-primary btn-round"
+                                                style="font-size:10px">Редактировать</a>
+                                            </div>
+                                            <div>
+                                                <a href="{% url 'admin.user.delete' user.id %}" class="btn btn-primary btn-round"
+                                                style="font-size:10px">Удалить</a>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 {% endfor %}

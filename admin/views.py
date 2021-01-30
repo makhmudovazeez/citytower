@@ -17,14 +17,14 @@ def authorize(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        user = auth.authenticate(username=username, password=password)
+        staff = auth.authenticate(username=username, password=password)
 
-        if user is not None:
-            auth.login(request, user)
+        if staff is not None:
+            auth.login(request, staff)
             return redirect('admin.index')
         else:
             return redirect('login')
-    return render(request, 'admin/login.html')
+    return redirect('login')
 
 
 # Crud actions
@@ -43,15 +43,28 @@ def user_create(request):
 
 
 def user_store(request):
-    pass
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
+        if password == confirm_password:
+            pass
+            User(username=username, email=email, is_staff=True)
 
 
-def user_edit(request):
-    pass
+def user_edit(request, id):
+    user = User.objects.filter(id=id)
+    return render(request, 'admin/users/edit.html', {'user': user})
 
 
 def user_update(request):
     pass
+
+
+def user_delete(request, id):
+    User.objects.filter(id=id).delete()
+    return redirect('admin.user.index')
 
 
 # Works Actions

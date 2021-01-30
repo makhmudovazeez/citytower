@@ -1,0 +1,59 @@
+{% extends 'admin/layouts/main.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Новый Пользователь</h4>
+                        <p class="card-category">Пользователь который будет иметь доступ к Админке</p>
+                    </div>
+                    <div class="content">
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Имя Пользователч</label>
+                                            <input type="text" name="username" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Эл.Адрес</label>
+                                            <input type="email" name="email" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Пароль</label>
+                                            <input type="password" name="password" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Подтвердите Пароль</label>
+                                            <input type="password" name="confirm_password" class="form-control"
+                                                   required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary pull-right">Создать Пользователя</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

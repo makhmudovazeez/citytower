@@ -11,14 +11,15 @@ urlpatterns = [
     path('user/store/', views.user_store, name='admin.user.store'),
     path('user/edit/', views.user_edit, name='admin.user.edit'),
     path('user/update/', views.user_update, name='admin.user.update'),
+    path('user/delete/<int:id>', views.user_delete, name='admin.user.delete'),
 
     # Works urls
     path('works/', views.works, name='admin.works'),
     path('works/create', views.works_create, name='admin.works.create'),
     path('works/store', views.works_store, name='admin.works.store'),
-    path('works/edit', views.works_edit, name='admin.works.edit'),
-    path('works/update', views.works_update, name='admin.works.update'),
-    path('works/delete', views.works_delete, name='admin.works.delete'),
+    path('works/edit/<int:id>', views.works_edit, name='admin.works.edit'),
+    path('works/update/<int:id>', views.works_update, name='admin.works.update'),
+    path('works/delete/<int:id>', views.works_delete, name='admin.works.delete'),
 
     # Services urls
     path('services/', views.services, name='admin.services'),
