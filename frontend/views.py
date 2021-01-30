@@ -1,16 +1,16 @@
 from django.shortcuts import render
-from admin.models import Contacts
-from admin.models import Works
-from admin.models import Services
+from contact.models import Contact
+from works.models import Works
+from services.models import Services
 from django.http import HttpResponse
 
 
 def session(request):
     try:
-        my_contact = Contacts.objects.get(pk=1)
+        my_contact = Contact.objects.get(pk=1)
     except:
-        Contacts.objects.create_contact('constructiontowersm@gmail.com', '+998998609464', '+998977467878')
-        my_contact = Contacts.objects.get(pk=1)
+        Contact.objects.create_contact('constructiontowersm@gmail.com', '+998998609464', '+998977467878')
+        my_contact = Contact.objects.get(pk=1)
     request.session.my_contact = my_contact
 
 

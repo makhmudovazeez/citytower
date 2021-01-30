@@ -1,0 +1,42 @@
+{% extends 'backend/layouts/main.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <a href="{% url 'about.edit' about.id %}" class="btn btn-primary btn-round">Редактировать</a>
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">О нас</h4>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">
+                        <h2>На русском</h2>
+                    </div>
+                    <div class="row">
+                        <div class="tim-typo" style="padding-left:5% !important;">
+                            <p style="color:white; font-size:20px;">
+                                {{ about.about_ru }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="card-title">
+                        <h2>На узбекском</h2>
+                    </div>
+                    <div class="row">
+                        <div class="tim-typo" style="padding-left:5% !important;">
+                            <p style="color:white; font-size:20px;">
+                                {{ about.about_uz }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

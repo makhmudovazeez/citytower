@@ -1,0 +1,42 @@
+{% extends 'backend/layouts/main.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">О нас</h4>
+                    </div>
+                    <div class="content">
+                        <div class="card-body">
+                            <form action="{% url 'about.update' about.id %}" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h2 class="bmd-label-floating">на Русском</h2>
+                                            <textarea name="about_ru" class="col-md-12" rows="20">{{ about.about_ru }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h2 class="bmd-label-floating">на Узбекском</h2>
+                                            <textarea name="about_uz" class="col-md-12" rows="20">{{ about.about_uz }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary pull-right mt-5">Создать Пользователя</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

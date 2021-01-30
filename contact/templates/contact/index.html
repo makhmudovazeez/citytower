@@ -1,0 +1,60 @@
+{% extends 'backend/layouts/main.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Контакт</h4>
+                        <p class="card-category">Ваш Контакт</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    №
+                                </th>
+                                <th>
+                                    Номер
+                                </th>
+                                <th>
+                                    Номер2
+                                </th>
+                                <th>
+                                    Эл.Адрес
+                                </th>
+                                <th>
+                                    Дейтсвие
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        {{ contact.id }}
+                                    </td>
+                                    <td>
+                                        {{ contact.phone }}
+                                    </td>
+                                    <td>
+                                        {{ contact.phone2 }}
+                                    </td>
+                                    <td>
+                                        {{ contact.email }}
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'contact.edit' contact.id %}" class="btn btn-primary btn-round">Редактировать</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

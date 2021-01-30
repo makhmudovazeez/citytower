@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% include 'backend/layouts/css.html' %}
+</head>
+<body class="dark-edition">
+    <div class="wrapper ">
+        {% include 'backend/layouts/sidebar.html' %}
+        <div class="main-panel">
+            {% include 'backend/layouts/header.html' %}
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+    </div>
+    {% include 'backend/layouts/js.html' %}
+</body>
+</html>

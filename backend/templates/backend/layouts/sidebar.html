@@ -1,0 +1,64 @@
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="{% url 'backend.index' %}" class="simple-text logo-normal">
+          Construction Tower SM
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          {% if request.resolver_match.view_name == 'backend.index' %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
+            <a class="nav-link" href="{% url 'backend.index' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Инфо Страница</p>
+            </a>
+          </li>
+          {% if 'backend.works' in request.resolver_match.view_name %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
+            <a class="nav-link" href="{% url 'about.index' %}">
+              <i class="material-icons">construction</i>
+              <p>Работы</p>
+            </a>
+          </li>
+          {% if 'backend.services' in request.resolver_match.view_name %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
+          <a class="nav-link" href="{% url 'about.index' %}">
+              <i class="material-icons">engineering</i>
+              <p>Сервисы</p>
+            </a>
+          </li>
+          {% if 'contact' in request.resolver_match.view_name %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
+            <a class="nav-link" href="{% url 'contact.index' %}">
+              <i class="material-icons">3p</i>
+              <p>Мой контакт</p>
+            </a>
+          </li>
+          {% if 'about' in request.resolver_match.view_name %}
+          <li class="nav-item active">
+          {% else %}
+            <li class="nav-item">
+          {% endif %}
+            <a class="nav-link" href="{% url 'about.index' %}">
+              <i class="material-icons">priority_high</i>
+              <p>О нас</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
