@@ -20,7 +20,7 @@ def edit(request, id):
 @login_required(login_url='backend.login')
 def update(request, id):
     if request.method == 'POST':
-        contact = Contact.objects.filter(id=id)
+        contact = Contact.objects.filter(id=id)[0]
         contact.phone = request.POST['phone']
         contact.phone2 = request.POST['phone2']
         contact.email = request.POST['email']

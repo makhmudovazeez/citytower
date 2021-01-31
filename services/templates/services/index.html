@@ -3,35 +3,57 @@
 {% block content %}
 <div class="content">
     <div class="container-fluid">
-        <a href="{% url 'about.edit' about.id %}" class="btn btn-primary btn-round">Редактировать</a>
-        <div class="card">
-            <div class="card-header card-header-primary">
-                <h4 class="card-title">О нас</h4>
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">
-                        <h2>На русском</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Сервисы</h4>
+                        <p class="card-category">Ваши сервисы</p>
                     </div>
-                    <div class="row">
-                        <div class="tim-typo" style="padding-left:5% !important;">
-                            <p style="color:white; font-size:20px;">
-                                {{ about.about_ru }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div>
-                    <div class="card-title">
-                        <h2>На узбекском</h2>
-                    </div>
-                    <div class="row">
-                        <div class="tim-typo" style="padding-left:5% !important;">
-                            <p style="color:white; font-size:20px;">
-                                {{ about.about_uz }}
-                            </p>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    №
+                                </th>
+                                <th>
+                                    Название ru
+                                </th>
+                                <th>
+                                    Название uz
+                                </th>
+                                <th>
+                                    Фото
+                                </th>
+                                <th>
+                                    Дейтсвия
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    {% for service in services %}
+                                    <td>
+                                        {{ service.id }}
+                                    </td>
+                                    <td>
+                                        {{ service.title_ru }}
+                                    </td>
+                                    <td>
+                                        {{ service.title_uz }}
+                                    </td>
+                                    <td>
+{{ service.image.url }}
+                                        <img src="{{ service.image.url }}" alt="">
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'services.edit' service.id %}" class="btn btn-warning btn-round">Редактировать</a>
+                                        <a href="{% url 'services.delete' service.id %}" class="btn btn-danger btn-round">Удалить</a>
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

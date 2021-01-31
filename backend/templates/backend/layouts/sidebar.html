@@ -29,12 +29,12 @@
               <p>Работы</p>
             </a>
           </li>
-          {% if 'backend.services' in request.resolver_match.view_name %}
+          {% if 'services' in request.resolver_match.view_name %}
           <li class="nav-item active">
           {% else %}
             <li class="nav-item">
           {% endif %}
-          <a class="nav-link" href="{% url 'about.index' %}">
+          <a class="nav-link" href="{% url 'services.index' %}">
               <i class="material-icons">engineering</i>
               <p>Сервисы</p>
             </a>

@@ -21,18 +21,19 @@
                     </div>
                     <div class="content">
                         <div class="card-body">
-                            <form>
+                            <form action="{% url 'contact.update' contact.id %}" method="post">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="bmd-label-floating">Номер Телефона</label>
-                                            <input type="text" value="{{ contact.phone }}" name="first_name" class="form-control" required>
+                                            <input type="text" value="{{ contact.phone }}" name="phone" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="bmd-label-floating">Доп Номер Телефона</label>
-                                            <input type="text" value="{{ contact.phone2 }}" name="last_name" class="form-control" required>
+                                            <input type="text" value="{{ contact.phone2 }}" name="phone2" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +49,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="bmd-label-floating">Адрес на Русском</label>
-                                            <input type="text"  value="{{ contact.address_ru }}" name="username" class="form-control">
+                                            <input type="text"  value="{{ contact.address_ru }}" name="address_ru" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +57,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="bmd-label-floating">Адрес на Узбекском</label>
-                                            <input type="text"  value="{{ contact.address_uz }}" name="username" class="form-control">
+                                            <input type="text"  value="{{ contact.address_uz }}" name="address_uz" class="form-control">
                                         </div>
                                     </div>
                                 </div>

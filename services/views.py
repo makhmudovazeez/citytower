@@ -1,12 +1,20 @@
 from django.shortcuts import render, redirect
 from .models import Services
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 
 # Create your views here.
 @login_required(login_url='backend.login')
 def index(request):
-    return render(request, 'services/index.html')
+    page_num = request.GET.get('page', 1)
+
+    services = Services.objects.all()
+
+    p = Paginator(services, 10)
+    page = p.page(page_num)
+
+    return render(request, 'services/index.html', {'services': page})
 
 
 @login_required(login_url='backend.login')
